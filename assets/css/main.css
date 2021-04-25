@@ -1,7 +1,8 @@
 section{
     display: flex;
     width: 100%;
-    overflow: auto;
+    overflow: scroll;
+    overflow-y: hidden;
 }
 
 section img{
@@ -29,4 +30,12 @@ img:hover {
 
 .content-display{
     display:block;
+}
+
+#movies-searchable{
+    /* height:300px; */
+}
+
+iframe{
+    margin:20px;
 }

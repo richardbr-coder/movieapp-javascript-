@@ -28,7 +28,7 @@ function createMovieContainer(movies){
             ${movieSection(movies)}
         </section>
         <div class="content">
-            <p id="content-close"></p>
+            <p class="text-2xl" id="content-close"></p>
         </div>
     `;
 
@@ -78,7 +78,7 @@ function handleError(){
 //onclick event (search feature)
 buttonElement.onclick = function(event){
     event.preventDefault();//changing the default browser behaviour
-    const value = inputElement.value;//storing the inputElement value in a varible
+    const value = inputElement.value;//storing the inputElement value in a variable
     searchMovie(value);
     
     inputElement.value = '';
@@ -86,18 +86,25 @@ buttonElement.onclick = function(event){
 }
 function createVideoTemplate(data, content){
     //Display movie videos
-    content.innerHTML = '<p id="content-close">x</p>';
     console.log('videos: ', data);
     const videos = data.results;
     const length = videos.length > 4 ? 4 : videos.length;
     const iframeContainer = document.createElement('div');
 
-    for (let i = 0; i < videos.length; i++){
-        const video = videos[i]; //video
-        const iframe = createIframe(video);
-        iframeContainer.appendChild(iframe);
-        content.appendChild(iframeContainer);
+    if (videos.length >= 1){
+        content.innerHTML = `<p class="text-center p-4 bg-gray-800 text-white text-2xl m-10 border rounded-lg" id="content-close">Available Movie Trailers</p>`;
+        for (let i = 0; i < videos.length; i++){
+            const video = videos[i]; //video
+            const iframe = createIframe(video);
+            iframeContainer.appendChild(iframe);
+            content.appendChild(iframeContainer);
+        }
     }
+    else if (videos.length === 0){
+        content.innerHTML = '<p class="text-center text-black text-4xl m-10" id="content-close">No Movie trailer</p>';
+ 
+    }
+    
 }
 //event delegation
 document.onclick = function(event){
@@ -133,3 +140,6 @@ document.onclick = function(event){
 getUpcomingMovies();
 getTopratedMovies();
 getPopularMovies();
+
+
+
