@@ -1,0 +1,32 @@
+section{
+    display: flex;
+    width: 100%;
+    overflow: auto;
+}
+
+section img{
+    width: 300px;
+    transition: 250ms all;
+}
+
+img:hover {
+    margin-left: 0 40px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* .content{
+    border: 1px solid red;
+} */
+
+.content div{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 10px;
+}
+
+.content-display{
+    display:block;
+}

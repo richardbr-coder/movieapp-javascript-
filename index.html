@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <title>Movie App</title>
+    
+</head>
+<body>
+    <div class="bg-gray-100">
+        <h1 class="text-center text-6xl bg-gray-600 text-white p-8"
+         id="demo">Welcome to my Javascript movie app</h1>
+
+        <form action="">
+            <div class="form-group">
+                <button class=" p-4 bg-gray-500 text-white border rounded-lg m-2 ml-4"
+                type="submit" id="search">Search a movie</button>
+               
+                <input class="border border-gray-300 m-4" type="text" id="inputValue">
+                <div class="text-xl text-center">search results will be displayed below</div>
+           
+            </div>
+
+            
+        </form>
+    </div>
+
+    
+    <div id="movies-searchable"></div>
+
+    <h1 class="mt-40 text-center text-6xl p-4 mb-12 bg-gray-600 text-white">Upcoming Movies</h1>
+    <div id="movies-upcoming"></div>
+    
+    <h1 class="text-center text-6xl p-4 mt-20 mb-8 bg-gray-600 text-white">Top Movies</h1>
+    <div id="movies-top"></div>
+    
+    <h1 class="text-center text-6xl p-4 mt-20 mb-8 bg-gray-600 text-white">Popular Movies</h1>
+    <div id="movies-popular"></div>
+
+    <footer>
+        <H1 class="text-center">Powered by TheMovieDB API</H1>
+    </footer>
+    
+    
+    
+    <script src="./assets/js/apiTransaction.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
